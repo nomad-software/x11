@@ -16,4 +16,4 @@ You will need to pass linker flags to the compiler to link to the neccessary X11
 ### Building with dub
 To build X11 as a static library using dub use the following command.
 
-	dub build --config=library
+	dub build --build=release
