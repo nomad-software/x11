@@ -1,0 +1,7 @@
+{
+	"name": "x11",
+	"description": "Bindings to X11 for the D programming language",
+	"homepage": "https://github.com/nomad-software/x11",
+	"authors": ["Walter Bright"],
+	"license": "LGPL v3",
+}
