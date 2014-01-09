@@ -11,9 +11,4 @@ These bindings have only been tested on Linux, developed with DMD v2.064.2. Othe
 ## Compiler flags
 
 ### Required
-You will need to pass linker flags to the compiler to link to the neccessary X11 libraries.
-
-### Building with dub
-To build X11 as a static library using dub use the following command.
-
-	dub build --build=release
+You will need to pass linker flags to the compiler to link to the neccessary X11 libraries when using these bindings.
