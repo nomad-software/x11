@@ -14,6 +14,7 @@
 		{
 			"name": "tcltk-import",
 			"excludedSourceFiles": [
+				"source/c/*",
 				"source/x11/keysym.d",
 				"source/x11/keysymdef.d",
 				"source/x11/Xlib_xcb.d",
@@ -26,14 +27,7 @@
 				"source/x11/Xresource.d",
 				"source/x11/Xtos.d",
 				"source/x11/Xutil.d",
-				"source/x11/extensions/randr.d",
-				"source/x11/extensions/render.d",
-				"source/x11/extensions/Xge.d",
-				"source/x11/extensions/XI.d",
-				"source/x11/extensions/XI2.d",
-				"source/x11/extensions/XInput2.d",
-				"source/x11/extensions/Xrandr.d",
-				"source/x11/extensions/Xrender.d",
+				"source/x11/extensions/*",
 			],
 		},
 	],
