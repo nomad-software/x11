@@ -4,12 +4,18 @@
 	"homepage": "https://github.com/nomad-software/x11",
 	"authors": ["Walter Bright"],
 	"license": "LGPL v3",
-	"libs-posix": ["X11"],
 	"configurations": [
 		{
 			"name": "library",
 			"targetType": "library",
 			"lflags-osx": ["-L/opt/X11/lib/"],
+			"libs-posix": ["X11"],
+		},
+		{
+			"name": "application",
+			"targetType": "executable",
+			"lflags-osx": ["-L/opt/X11/lib/"],
+			"libs-posix": ["X11"],
 		},
 		{
 			"name": "tcltk-import",
