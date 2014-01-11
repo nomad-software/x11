@@ -8,7 +8,13 @@ This repository is a clone of the [Deimos X11](https://github.com/D-Programming-
 ## Supported platforms
 These bindings have only been tested on Linux, developed with DMD v2.064.2. Other compilers have not been tested but should build fine.
 
-## Compiler flags
+## Platform issue
 
-### Required
-You will need to pass linker flags to the compiler to link to the neccessary X11 libraries when using these bindings.
+### Linux
+Should build just fine.
+
+### Mac OSX
+Depends on [XQuartz](http://xquartz.macosforge.org/landing/) being installed in `/opt/X11/lib/` (which is the default location).
+
+### Windows
+Not supported.
