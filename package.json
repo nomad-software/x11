@@ -4,6 +4,9 @@
 	"homepage": "https://github.com/nomad-software/x11",
 	"authors": ["Walter Bright"],
 	"license": "LGPL v3",
+	"excludedSourceFiles": [
+		"source/c/*",
+	],
 	"configurations": [
 		{
 			"name": "library",
@@ -20,7 +23,6 @@
 		{
 			"name": "tcltk-import",
 			"excludedSourceFiles": [
-				"source/c/*",
 				"source/x11/keysym.d",
 				"source/x11/keysymdef.d",
 				"source/x11/Xlib_xcb.d",
