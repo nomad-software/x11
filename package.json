@@ -11,14 +11,12 @@
 		{
 			"name": "library",
 			"targetType": "library",
-			"lflags-osx": ["-L/opt/X11/lib/"],
-			"libs-posix": ["X11"],
+			"libs-linux": ["X11"],
 		},
 		{
 			"name": "application",
 			"targetType": "executable",
-			"lflags-osx": ["-L/opt/X11/lib/"],
-			"libs-posix": ["X11"],
+			"libs-linux": ["X11"],
 		},
 		{
 			"name": "tcltk-import",
