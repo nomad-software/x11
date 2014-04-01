@@ -12,7 +12,7 @@ These bindings have been developed with DMD v2.064.2. Other compilers have not b
 Should build just fine.
 
 ### Mac OSX
-Depends on [XQuartz](http://xquartz.macosforge.org/landing/) being installed in `/opt/X11/lib/` (which is the default location).
+Support for Mac OSX is deprecated as x11 is no longer officially supported. You can still try and use these bindings with [XQuartz](http://xquartz.macosforge.org/landing/) installed but you're on your own.
 
 ### Windows
 Not supported.
