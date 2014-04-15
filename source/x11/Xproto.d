@@ -171,18 +171,9 @@ we must redefine the following types in terms of Xmd.h's types, which may
 include bit fields.  All of these are #undef'd at the end of this file,
 restoring the definitions in X.h.  */
 
-alias CARD32    Window;
-alias CARD32    Drawable;
-alias CARD32    Font;
-alias CARD32    Pixmap;
-alias CARD32    Cursor;
-alias CARD32    Colormap;
-alias CARD32    GContext;
-alias CARD32    Atom;
-alias CARD32    VisualID;
-alias CARD32    Time;
-alias CARD8     KeyCode;
-alias CARD32    KeySym;
+// Due to the way alias and import works, those definitions needs to be
+// put in a separate module.
+import x11.Xproto_undef;
 
 const int X_TCP_PORT = 6000;                            /* add display number                                           */
 
