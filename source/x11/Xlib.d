@@ -1545,6 +1545,18 @@ extern Window XCreateWindow(
     c_ulong                                             /* valuemask                                                    */,
     XSetWindowAttributes*                               /* attributes                                                   */
 );
+/++
+ + Create windows and window attributes structure.
+ +
+ + This overload allow you to pass the special parameter "CopyFromParent".
+ + Watch out as it will accept any kind of XID, hence it is not type safe.
+ +/
+extern Window XCreateWindow(Display* display, Window   parent,
+                            int x, int y, uint width, uint height,
+                            uint border_width, int depth, uint _class,
+                            XID copyFromParent, c_ulong  valuemask,
+                            XSetWindowAttributes* attributes);
+
 extern Colormap* XListInstalledColormaps(
     Display*                                            /* display                                                      */,
     Window                                              /* w                                                            */,
