@@ -30,9 +30,9 @@ int         DefaultScreen               ( Display* dpy           )   { return dp
 Window      DefaultRootWindow           ( Display* dpy           )   { return ScreenOfDisplay( dpy,DefaultScreen( dpy ) ).root;  }
 Visual*     DefaultVisual               ( Display* dpy,int scr   )   { return ScreenOfDisplay( dpy,scr ).root_visual;            }
 GC          DefaultGC                   ( Display* dpy,int scr   )   { return ScreenOfDisplay( dpy,scr ).default_gc;             }
-uint        BlackPixel                  ( Display* dpy,int scr   )   { return cast(uint)ScreenOfDisplay( dpy,scr ).black_pixel;  }
-uint        WhitePixel                  ( Display* dpy,int scr   )   { return cast(uint)ScreenOfDisplay( dpy,scr ).white_pixel;  }
-c_ulong     AllPlanes                   (                           )   { return 0xFFFFFFFF;                                        }
+c_ulong     BlackPixel                  ( Display* dpy,int scr   )   { return cast(c_ulong)ScreenOfDisplay( dpy,scr ).black_pixel;  }
+c_ulong     WhitePixel                  ( Display* dpy,int scr   )   { return cast(c_ulong)ScreenOfDisplay( dpy,scr ).white_pixel;  }
+c_ulong     AllPlanes                   (                        )   { return 0xFFFFFFFF;                                        }
 int         QLength                     ( Display* dpy           )   { return dpy.qlen;                                          }
 int         DisplayWidth                ( Display* dpy,int scr   )   { return ScreenOfDisplay( dpy,scr ).width;                  }
 int         DisplayHeight               ( Display* dpy,int scr   )   { return ScreenOfDisplay( dpy,scr ).height;                 }
@@ -60,8 +60,8 @@ Screen*     ScreenOfDisplay             ( Display* dpy,int scr   )   { return &d
 Screen*     DefaultScreenOfDisplay      ( Display* dpy           )   { return ScreenOfDisplay( dpy,DefaultScreen( dpy ) );       }
 Display*    DisplayOfScreen             ( Screen s                  )   { return s.display;                                         }
 Window      RootWindowOfScreen          ( Screen s                  )   { return s.root;                                            }
-uint        BlackPixelOfScreen          ( Screen s                  )   { return cast(uint)s.black_pixel;                           }
-uint        WhitePixelOfScreen          ( Screen s                  )   { return cast(uint)s.white_pixel;                           }
+c_ulong     BlackPixelOfScreen          ( Screen s                  )   { return cast(c_ulong)s.black_pixel;                           }
+c_ulong     WhitePixelOfScreen          ( Screen s                  )   { return cast(c_ulong)s.white_pixel;                           }
 Colormap    DefaultColormapOfScreen     ( Screen s                  )   { return s.cmap;                                            }
 int         DefaultDepthOfScreen        ( Screen s                  )   { return s.root_depth;                                      }
 GC          DefaultGCOfScreen           ( Screen s                  )   { return s.default_gc;                                      }
@@ -1525,7 +1525,7 @@ extern Window XCreateSimpleWindow(
     uint                                                /* height                                                       */,
     uint                                                /* border_width                                                 */,
     c_ulong                                             /* border                                                       */,
-    uint                                                /* background                                                   */
+    c_ulong                                             /* background                                                   */
 );
 extern Window XGetSelectionOwner(
     Display*                                            /* display                                                      */,
