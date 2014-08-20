@@ -6,7 +6,7 @@ This repository is a clone of the [Deimos X11](https://github.com/D-Programming-
 ---
 
 ## Supported platforms
-These bindings have been developed with DMD v2.064.2. Other compilers have not been tested but should build fine.
+These bindings have been developed with the latest DMD compiler. Other compilers have not been tested but should build fine.
 
 ### Linux
 Should build just fine.
