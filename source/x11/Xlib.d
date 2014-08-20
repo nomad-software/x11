@@ -30,9 +30,9 @@ int         DefaultScreen               ( Display* dpy           )   { return dp
 Window      DefaultRootWindow           ( Display* dpy           )   { return ScreenOfDisplay( dpy,DefaultScreen( dpy ) ).root;  }
 Visual*     DefaultVisual               ( Display* dpy,int scr   )   { return ScreenOfDisplay( dpy,scr ).root_visual;            }
 GC          DefaultGC                   ( Display* dpy,int scr   )   { return ScreenOfDisplay( dpy,scr ).default_gc;             }
-uint        BlackPixel                  ( Display* dpy,int scr   )   { return cast(uint)ScreenOfDisplay( dpy,scr ).black_pixel;  }
-uint        WhitePixel                  ( Display* dpy,int scr   )   { return cast(uint)ScreenOfDisplay( dpy,scr ).white_pixel;  }
-c_ulong     AllPlanes                   (                           )   { return 0xFFFFFFFF;                                        }
+c_ulong     BlackPixel                  ( Display* dpy,int scr   )   { return cast(c_ulong)ScreenOfDisplay( dpy,scr ).black_pixel;  }
+c_ulong     WhitePixel                  ( Display* dpy,int scr   )   { return cast(c_ulong)ScreenOfDisplay( dpy,scr ).white_pixel;  }
+c_ulong     AllPlanes                   (                        )   { return 0xFFFFFFFF;                                        }
 int         QLength                     ( Display* dpy           )   { return dpy.qlen;                                          }
 int         DisplayWidth                ( Display* dpy,int scr   )   { return ScreenOfDisplay( dpy,scr ).width;                  }
 int         DisplayHeight               ( Display* dpy,int scr   )   { return ScreenOfDisplay( dpy,scr ).height;                 }
@@ -56,27 +56,27 @@ uint        NextRequest                 ( Display* dpy           )   { return ca
 uint        LastKnownRequestProcessed   ( Display* dpy           )   { return cast(uint)dpy.last_request_read;                   }
 
 /* macros for screen oriented applications ( toolkit ) */
-Screen*     ScreenOfDisplay             ( Display* dpy,int scr   )   { return &dpy.screens[scr];                                  }
+Screen*     ScreenOfDisplay             ( Display* dpy,int scr   )   { return &dpy.screens[scr];                                 }
 Screen*     DefaultScreenOfDisplay      ( Display* dpy           )   { return ScreenOfDisplay( dpy,DefaultScreen( dpy ) );       }
-Display*    DisplayOfScreen             ( Screen s                  )   { return s.display;                                         }
-Window      RootWindowOfScreen          ( Screen s                  )   { return s.root;                                            }
-uint        BlackPixelOfScreen          ( Screen s                  )   { return cast(uint)s.black_pixel;                           }
-uint        WhitePixelOfScreen          ( Screen s                  )   { return cast(uint)s.white_pixel;                           }
-Colormap    DefaultColormapOfScreen     ( Screen s                  )   { return s.cmap;                                            }
-int         DefaultDepthOfScreen        ( Screen s                  )   { return s.root_depth;                                      }
-GC          DefaultGCOfScreen           ( Screen s                  )   { return s.default_gc;                                      }
-Visual*     DefaultVisualOfScreen       ( Screen s                  )   { return s.root_visual;                                     }
-int         WidthOfScreen               ( Screen s                  )   { return s.width;                                           }
-int         HeightOfScreen              ( Screen s                  )   { return s.height;                                          }
-int         WidthMMOfScreen             ( Screen s                  )   { return s.mwidth;                                          }
-int         HeightMMOfScreen            ( Screen s                  )   { return s.mheight;                                         }
-int         PlanesOfScreen              ( Screen s                  )   { return s.root_depth;                                      }
-int         CellsOfScreen               ( Screen s                  )   { return DefaultVisualOfScreen( s ).map_entries;            }
-int         MinCmapsOfScreen            ( Screen s                  )   { return s.min_maps;                                        }
-int         MaxCmapsOfScreen            ( Screen s                  )   { return s.max_maps;                                        }
-Bool        DoesSaveUnders              ( Screen s                  )   { return s.save_unders;                                     }
-int         DoesBackingStore            ( Screen s                  )   { return s.backing_store;                                   }
-long        EventMaskOfScreen           ( Screen s                  )   { return s.root_input_mask;                                 }
+Display*    DisplayOfScreen             ( Screen* s              )   { return s.display;                                         }
+Window      RootWindowOfScreen          ( Screen* s              )   { return s.root;                                            }
+c_ulong     BlackPixelOfScreen          ( Screen* s              )   { return cast(c_ulong)s.black_pixel;                        }
+c_ulong     WhitePixelOfScreen          ( Screen* s              )   { return cast(c_ulong)s.white_pixel;                        }
+Colormap    DefaultColormapOfScreen     ( Screen* s              )   { return s.cmap;                                            }
+int         DefaultDepthOfScreen        ( Screen* s              )   { return s.root_depth;                                      }
+GC          DefaultGCOfScreen           ( Screen* s              )   { return s.default_gc;                                      }
+Visual*     DefaultVisualOfScreen       ( Screen* s              )   { return s.root_visual;                                     }
+int         WidthOfScreen               ( Screen* s              )   { return s.width;                                           }
+int         HeightOfScreen              ( Screen* s              )   { return s.height;                                          }
+int         WidthMMOfScreen             ( Screen* s              )   { return s.mwidth;                                          }
+int         HeightMMOfScreen            ( Screen* s              )   { return s.mheight;                                         }
+int         PlanesOfScreen              ( Screen* s              )   { return s.root_depth;                                      }
+int         CellsOfScreen               ( Screen* s              )   { return DefaultVisualOfScreen( s ).map_entries;            }
+int         MinCmapsOfScreen            ( Screen* s              )   { return s.min_maps;                                        }
+int         MaxCmapsOfScreen            ( Screen* s              )   { return s.max_maps;                                        }
+Bool        DoesSaveUnders              ( Screen* s              )   { return s.save_unders;                                     }
+int         DoesBackingStore            ( Screen* s              )   { return s.backing_store;                                   }
+c_long      EventMaskOfScreen           ( Screen* s              )   { return s.root_input_mask;                                 }
 
 /*
  * Extensions need a way to hang private data on some structures.
@@ -1525,7 +1525,7 @@ extern Window XCreateSimpleWindow(
     uint                                                /* height                                                       */,
     uint                                                /* border_width                                                 */,
     c_ulong                                             /* border                                                       */,
-    uint                                                /* background                                                   */
+    c_ulong                                             /* background                                                   */
 );
 extern Window XGetSelectionOwner(
     Display*                                            /* display                                                      */,
