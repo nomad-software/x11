@@ -1002,16 +1002,16 @@ struct XwcTextItem{
     XFontSet        font_set;
 }
 
-const char[] XNRequiredCharSet                = ".duprequiredCharSet".dup;
-const char[] XNQueryOrientation               = ".dupqueryOrientation".dup;
-const char[] XNBaseFontName                   = ".dupbaseFontName".dup;
-const char[] XNOMAutomatic                    = ".dupomAutomatic".dup;
-const char[] XNMissingCharSet                 = ".dupmissingCharSet".dup;
-const char[] XNDefaultString                  = ".dupdefaultString".dup;
-const char[] XNOrientation                    = ".duporientation".dup;
-const char[] XNDirectionalDependentDrawing    = ".dupdirectionalDependentDrawing".dup;
-const char[] XNContextualDrawing              = ".dupcontextualDrawing".dup;
-const char[] XNFontInfo                       = ".dupfontInfo".dup;
+const char* XNRequiredCharSet                = "requiredCharSet";
+const char* XNQueryOrientation               = "queryOrientation";
+const char* XNBaseFontName                   = "baseFontName";
+const char* XNOMAutomatic                    = "omAutomatic";
+const char* XNMissingCharSet                 = "missingCharSet";
+const char* XNDefaultString                  = "defaultString";
+const char* XNOrientation                    = "orientation";
+const char* XNDirectionalDependentDrawing    = "directionalDependentDrawing";
+const char* XNContextualDrawing              = "contextualDrawing";
+const char* XNFontInfo                       = "fontInfo";
 
 struct XOMCharSetList{
     int charset_count;
@@ -1079,49 +1079,49 @@ enum {
     XIMStatusNone       = 0x0800L
 }
 
-const char[] XNVaNestedList                 = "XNVaNestedList".dup;
-const char[] XNQueryInputStyle              = "queryInputStyle".dup;
-const char[] XNClientWindow                 = "clientWindow".dup;
-const char[] XNInputStyle                   = "inputStyle".dup;
-const char[] XNFocusWindow                  = "focusWindow".dup;
-const char[] XNResourceName                 = "resourceName".dup;
-const char[] XNResourceClass                = "resourceClass".dup;
-const char[] XNGeometryCallback             = "geometryCallback".dup;
-const char[] XNDestroyCallback              = "destroyCallback".dup;
-const char[] XNFilterEvents                 = "filterEvents".dup;
-const char[] XNPreeditStartCallback         = "preeditStartCallback".dup;
-const char[] XNPreeditDoneCallback          = "preeditDoneCallback".dup;
-const char[] XNPreeditDrawCallback          = "preeditDrawCallback".dup;
-const char[] XNPreeditCaretCallback         = "preeditCaretCallback".dup;
-const char[] XNPreeditStateNotifyCallback   = "preeditStateNotifyCallback".dup;
-const char[] XNPreeditAttributes            = "preeditAttributes".dup;
-const char[] XNStatusStartCallback          = "statusStartCallback".dup;
-const char[] XNStatusDoneCallback           = "statusDoneCallback".dup;
-const char[] XNStatusDrawCallback           = "statusDrawCallback".dup;
-const char[] XNStatusAttributes             = "statusAttributes".dup;
-const char[] XNArea                         = "area".dup;
-const char[] XNAreaNeeded                   = "areaNeeded".dup;
-const char[] XNSpotLocation                 = "spotLocation".dup;
-const char[] XNColormap                     = "colorMap".dup;
-const char[] XNStdColormap                  = "stdColorMap".dup;
-const char[] XNForeground                   = "foreground".dup;
-const char[] XNBackground                   = "background".dup;
-const char[] XNBackgroundPixmap             = "backgroundPixmap".dup;
-const char[] XNFontSet                      = "fontSet".dup;
-const char[] XNLineSpace                    = "lineSpace".dup;
-const char[] XNCursor                       = "cursor".dup;
+const char* XNVaNestedList                 = "XNVaNestedList";
+const char* XNQueryInputStyle              = "queryInputStyle";
+const char* XNClientWindow                 = "clientWindow";
+const char* XNInputStyle                   = "inputStyle";
+const char* XNFocusWindow                  = "focusWindow";
+const char* XNResourceName                 = "resourceName";
+const char* XNResourceClass                = "resourceClass";
+const char* XNGeometryCallback             = "geometryCallback";
+const char* XNDestroyCallback              = "destroyCallback";
+const char* XNFilterEvents                 = "filterEvents";
+const char* XNPreeditStartCallback         = "preeditStartCallback";
+const char* XNPreeditDoneCallback          = "preeditDoneCallback";
+const char* XNPreeditDrawCallback          = "preeditDrawCallback";
+const char* XNPreeditCaretCallback         = "preeditCaretCallback";
+const char* XNPreeditStateNotifyCallback   = "preeditStateNotifyCallback";
+const char* XNPreeditAttributes            = "preeditAttributes";
+const char* XNStatusStartCallback          = "statusStartCallback";
+const char* XNStatusDoneCallback           = "statusDoneCallback";
+const char* XNStatusDrawCallback           = "statusDrawCallback";
+const char* XNStatusAttributes             = "statusAttributes";
+const char* XNArea                         = "area";
+const char* XNAreaNeeded                   = "areaNeeded";
+const char* XNSpotLocation                 = "spotLocation";
+const char* XNColormap                     = "colorMap";
+const char* XNStdColormap                  = "stdColorMap";
+const char* XNForeground                   = "foreground";
+const char* XNBackground                   = "background";
+const char* XNBackgroundPixmap             = "backgroundPixmap";
+const char* XNFontSet                      = "fontSet";
+const char* XNLineSpace                    = "lineSpace";
+const char* XNCursor                       = "cursor";
 
-const char[] XNQueryIMValuesList            = "queryIMValuesList".dup;
-const char[] XNQueryICValuesList            = "queryICValuesList".dup;
-const char[] XNVisiblePosition              = "visiblePosition".dup;
-const char[] XNR6PreeditCallback            = "r6PreeditCallback".dup;
-const char[] XNStringConversionCallback     = "stringConversionCallback".dup;
-const char[] XNStringConversion             = "stringConversion".dup;
-const char[] XNResetState                   = "resetState".dup;
-const char[] XNHotKey                       = "hotKey".dup;
-const char[] XNHotKeyState                  = "hotKeyState".dup;
-const char[] XNPreeditState                 = "preeditState".dup;
-const char[] XNSeparatorofNestedList        = "separatorofNestedList".dup;
+const char* XNQueryIMValuesList            = "queryIMValuesList";
+const char* XNQueryICValuesList            = "queryICValuesList";
+const char* XNVisiblePosition              = "visiblePosition";
+const char* XNR6PreeditCallback            = "r6PreeditCallback";
+const char* XNStringConversionCallback     = "stringConversionCallback";
+const char* XNStringConversion             = "stringConversion";
+const char* XNResetState                   = "resetState";
+const char* XNHotKey                       = "hotKey";
+const char* XNHotKeyState                  = "hotKeyState";
+const char* XNPreeditState                 = "preeditState";
+const char* XNSeparatorofNestedList        = "separatorofNestedList";
 
 const int XBufferOverflow                   = -1;
 const int XLookupNone                       = 1;
@@ -1129,7 +1129,7 @@ const int XLookupChars                      = 2;
 const int XLookupKeySym                     = 3;
 const int XLookupBoth                       = 4;
 
-void* XVaNestedList;
+alias XVaNestedList = void*;
 
 struct XIMCallback{
     XPointer client_data;
@@ -1433,7 +1433,7 @@ extern int function(
 );
 extern Atom XInternAtom(
     Display*                                            /* display                                                      */,
-    char*                                               /* atom_name                                                    */,
+    const char*                                         /* atom_name                                                    */,
     Bool                                                /* only_if_exists                                               */
 );
 extern Status XInternAtoms(
@@ -3462,17 +3462,15 @@ extern Status XCloseOM(
     XOM                                                 /* om                                                           */
 );
 
-/+todo
 extern char* XSetOMValues(
     XOM                                                 /* om                                                           */,
     ...
-) _X_SENTINEL(0);
+);
 
 extern char* XGetOMValues(
     XOM                                                 /* om                                                           */,
     ...
-) _X_SENTINEL(0);
-+/
+);
 
 extern Display* XDisplayOfOM(
     XOM                                                 /* om                                                           */
@@ -3483,12 +3481,11 @@ extern char* XLocaleOfOM(
     XOM                                                 /* om                                                           */
 );
 
-/+todo
 extern XOC XCreateOC(
     XOM                                                 /* om                                                           */,
     ...
-) _X_SENTINEL(0);
-+/
+);
+
 extern void XDestroyOC(
     XOC                                                 /* oc                                                           */
 );
@@ -3497,17 +3494,15 @@ extern XOM XOMOfOC(
     XOC                                                 /* oc                                                           */
 );
 
-/+todo
 extern char* XSetOCValues(
     XOC                                                 /* oc                                                           */,
     ...
-) _X_SENTINEL(0);
+);
 
 extern char* XGetOCValues(
     XOC                                                 /* oc                                                           */,
     ...
-) _X_SENTINEL(0);
-+/
+);
 
 extern XFontSet XCreateFontSet(
     Display*                                            /* display                                                      */,
@@ -3737,15 +3732,16 @@ extern Status XCloseIM(
     XIM                                                 /* im                                                           */
 );
 
-/+
 extern char* XGetIMValues(
-    XIM                                                 /* im                                                           */, ...
-) _X_SENTINEL(0);
+    XIM                                                 /* im                                                           */,
+	...
+);
 
 extern char* XSetIMValues(
-    XIM                                                 /* im                                                           */, ...
-) _X_SENTINEL(0);
-+/
+    XIM                                                 /* im                                                           */,
+	...
+);
+
 extern Display* XDisplayOfIM(
     XIM                                                 /* im                                                           */
 );
@@ -3754,15 +3750,14 @@ extern char* XLocaleOfIM(
     XIM                                                 /* im                                                           */
 );
 
-/+todo
 extern XIC XCreateIC(
-    XIM                                                 /* im                                                           */, ...
-) _X_SENTINEL(0);
+    XIM,                                                 /* im                                                           */
+	...
+);
 
 extern void XDestroyIC(
     XIC                                                 /* ic                                                           */
 );
-+/
 
 extern void XSetICFocus(
     XIC                                                 /* ic                                                           */
@@ -3784,15 +3779,15 @@ extern char* Xutf8ResetIC(
     XIC                                                 /* ic                                                           */
 );
 
-/+todo
 extern char* XSetICValues(
-    XIC                                                 /* ic                                                           */, ...
-) _X_SENTINEL(0);
+    XIC                                                 /* ic                                                           */,
+	...
+);
 
 extern char* XGetICValues(
-    XIC                                                 /* ic                                                           */, ...
-) _X_SENTINEL(0);
-+/
+    XIC                                                 /* ic                                                           */,
+	...
+);
 
 extern XIM XIMOfIC(
     XIC                                                 /* ic                                                           */
@@ -3830,11 +3825,10 @@ extern int Xutf8LookupString(
     Status*                                             /* status_return                                                */
 );
 
-/+todo
 extern XVaNestedList XVaCreateNestedList(
-    int                                                 /*unused                                                        */, ...
-) _X_SENTINEL(0);
-+/
+    int                                                 /*unused                                                        */,
+	... 
+);
                                                         /* internal connections for IMs                                 */
 
 extern Bool XRegisterIMInstantiateCallback(
