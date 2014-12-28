@@ -587,7 +587,7 @@ void FlushGC(Display* dpy, GC gc){
  * "data" is a pinter to a data buffer.
  * "len" is the length of the data buffer.
  */
-static if( DataRoutineIsProcedure ){
+static if(!DataRoutineIsProcedure){
     void Data( Display* dpy, char* data, uint len) {
         if (dpy.bufptr + len <= dpy.bufmax){
             memcpy(dpy.bufptr, data, cast(int)len);
