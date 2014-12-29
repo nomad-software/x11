@@ -188,9 +188,9 @@ alias _XDisplay Display;
 void XAllocIDs( Display* dpy, XID* ids, int n){ dpy.idlist_alloc(dpy,ids,n); }
 
 /*
- * define the following if you want the Data macro to be a procedure instead
+ * define the following if you want the Data macro to be a procedure instead.
  */
-enum bool DataRoutineIsProcedure = true;
+enum bool DataRoutineIsProcedure = false;
 
 /*
  * _QEvent datatype for use in input queueing.
@@ -892,8 +892,10 @@ struct _XExten {                                        /* private to extension 
 alias _XExten _XExtension;
 
                                                         /* extension hooks                                              */
-
-extern void Data(Display* dpy, char* data, c_long len);
+static if (DataRoutineIsProcedure)
+{
+    extern void Data(Display* dpy, char* data, c_long len);
+}
 
 extern int _XError(
     Display*                                            /* dpy                                                          */,
