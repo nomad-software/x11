@@ -525,7 +525,7 @@ struct xQueryKeymapReply{
     BYTE pad1;
     CARD16 sequenceNumber;
     CARD32 length;                                      /* 2, NOT 0; this is an extra-large reply                       */
-    BYTE map[32];
+    BYTE[32] map;
 }
 
                                                         /* Warning: this MUST match (up to component renaming) xListFontsWithInfoReply */
@@ -859,7 +859,7 @@ struct xGetKeyboardControlReply{
     CARD8 keyClickPercent, bellPercent;
     CARD16 bellPitch, bellDuration;
     CARD16 pad;
-    BYTE map[32];                                       /* bit masks start here                                         */
+    BYTE[32] map;                                       /* bit masks start here                                         */
 }
 
 struct xGetPointerControlReply{
@@ -1140,7 +1140,7 @@ struct _xEvent {
                 }
                 struct b{
                     Atom type;
-                    INT8 bytes[20];
+                    INT8[20] bytes;
                 }
             }
         }
@@ -1185,7 +1185,7 @@ struct xGenericEvent{
 
 struct xKeymapEvent{
     BYTE type;
-    BYTE map[31];
+    BYTE[31] map;
 }
 
 const size_t XEventSize = xEvent.sizeof;
@@ -1330,7 +1330,7 @@ struct xChangePropertyReq{
     Window window;
     Atom property, type;
     CARD8 format;
-    BYTE pad[3];
+    BYTE[3] pad;
     CARD32 nUnits;                                  /* length of stuff following, depends on format                 */
 }
 
@@ -1377,7 +1377,7 @@ version( X86_64 ){
         CARD16 length;
         Window destination;
         CARD32 eventMask;
-        BYTE eventdata[SIZEOF!xEvent()];   /* the structure should have been quad-aligned                  */
+        BYTE[SIZEOF!xEvent()] eventdata;   /* the structure should have been quad-aligned                  */
     }
 }
 else{
