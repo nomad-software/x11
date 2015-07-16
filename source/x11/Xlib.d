@@ -706,7 +706,7 @@ struct XConfigureRequestEvent{
     int border_width;
     Window above;
     int detail;                                         /* Above, Below, TopIf, BottomIf, Opposite                      */
-    uint  value_mask;
+    c_ulong value_mask;
 }
 
 struct XCirculateEvent{
