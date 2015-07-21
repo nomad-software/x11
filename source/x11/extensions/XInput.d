@@ -31,7 +31,7 @@ enum _changeDeviceNotify = 2;
    code has to be in sync with FixExtensionEvents() in xserver/Xi/extinit.c */
 enum _propertyNotify = 6;
 
-auto FindTypeAndClass(A,B,C,D,E)(A d, B type, C _class, D classid, E offset){
+auto FindTypeAndClass(A,B,C,D,E)(ref A d, ref B type, ref C _class, ref D classid, ref E offset){
     int _i;
     XInputClassInfo *_ip;
     type = 0;
@@ -43,95 +43,95 @@ auto FindTypeAndClass(A,B,C,D,E)(A d, B type, C _class, D classid, E offset){
         }
 }
 
-auto DeviceKeyPress(A,B,C)(A d,B type,C _class){
-    return FindTypeAndClass(d, type, _class, KeyClass, _deviceKeyPress);
+auto DeviceKeyPress(A,B,C)(ref A d, ref B type, ref C _class){
+    FindTypeAndClass(d, type, _class, KeyClass, _deviceKeyPress);
 }
 
-auto DeviceKeyRelease(A,B,C)(A d,B type,C _class){
-    return FindTypeAndClass(d, type, _class, KeyClass, _deviceKeyRelease);
+auto DeviceKeyRelease(A,B,C)(ref A d, ref B type, ref C _class){
+    FindTypeAndClass(d, type, _class, KeyClass, _deviceKeyRelease);
 }
 
-auto DeviceButtonPress(A,B,C)(A d,B type,C _class){
-    return FindTypeAndClass(d, type, _class, ButtonClass, _deviceButtonPress);
+auto DeviceButtonPress(A,B,C)(ref A d, ref B type, ref C _class){
+    FindTypeAndClass(d, type, _class, ButtonClass, _deviceButtonPress);
 }
 
-auto DeviceButtonRelease(A,B,C)(A d,B type,C _class){
-    return FindTypeAndClass(d, type, _class, ButtonClass, _deviceButtonRelease);
+auto DeviceButtonRelease(A,B,C)(ref A d, ref B type, ref C _class){
+    FindTypeAndClass(d, type, _class, ButtonClass, _deviceButtonRelease);
 }
 
-auto DeviceMotionNotify(A,B,C)(A d,B type,C _class){
-    return FindTypeAndClass(d, type, _class, ValuatorClass, _deviceMotionNotify);
+auto DeviceMotionNotify(A,B,C)(ref A d, ref B type, ref C _class){
+    FindTypeAndClass(d, type, _class, ValuatorClass, _deviceMotionNotify);
 }
 
-auto DeviceFocusIn(A,B,C)(A d,B type,C _class){
-    return FindTypeAndClass(d, type, _class, FocusClass, _deviceFocusIn);
+auto DeviceFocusIn(A,B,C)(ref A d, ref B type, ref C _class){
+    FindTypeAndClass(d, type, _class, FocusClass, _deviceFocusIn);
 }
 
-auto DeviceFocusOut(A,B,C)(A d,B type,C _class){
-    return FindTypeAndClass(d, type, _class, FocusClass, _deviceFocusOut);
+auto DeviceFocusOut(A,B,C)(ref A d, ref B type, ref C _class){
+    FindTypeAndClass(d, type, _class, FocusClass, _deviceFocusOut);
 }
 
-auto ProximityIn(A,B,C)(A d, B type, C _class){
-    return FindTypeAndClass(d, type, _class, ProximityClass, _proximityIn);
+auto ProximityIn(A,B,C)(ref A d, ref B type, ref C _class){
+    FindTypeAndClass(d, type, _class, ProximityClass, _proximityIn);
 }
 
-auto ProximityOut(A,B,C)(A d, B type, C _class){
-    return FindTypeAndClass(d, type, _class, ProximityClass, _proximityOut);
+auto ProximityOut(A,B,C)(ref A d, ref B type, ref C _class){
+    FindTypeAndClass(d, type, _class, ProximityClass, _proximityOut);
 }
 
-auto DeviceStateNotify(A,B,C)(A d, B type, C _class){
-    return FindTypeAndClass(d, type, _class, OtherClass, _deviceStateNotify);
+auto DeviceStateNotify(A,B,C)(ref A d, ref B type, ref C _class){
+    FindTypeAndClass(d, type, _class, OtherClass, _deviceStateNotify);
 }
 
-auto DeviceMappingNotify(A,B,C)(A d, B type, C _class){
-    return FindTypeAndClass(d, type, _class, OtherClass, _deviceMappingNotify);
+auto DeviceMappingNotify(A,B,C)(ref A d, ref B type, ref C _class){
+    FindTypeAndClass(d, type, _class, OtherClass, _deviceMappingNotify);
 }
 
-auto ChangeDeviceNotify(A,B,C)(A d, B type, C _class){
-    return FindTypeAndClass(d, type, _class, OtherClass, _changeDeviceNotify);
+auto ChangeDeviceNotify(A,B,C)(ref A d, ref B type, ref C _class){
+    FindTypeAndClass(d, type, _class, OtherClass, _changeDeviceNotify);
 }
 
-auto DevicePropertyNotify(A,B,C)(A d, B type, C _class){
-    return FindTypeAndClass(d, type, _class, OtherClass, _propertyNotify);
+auto DevicePropertyNotify(A,B,C)(ref A d, ref B type, ref C _class){
+    FindTypeAndClass(d, type, _class, OtherClass, _propertyNotify);
 }
 
-auto DevicePointerMotionHint(A,B,C)(A d, B type, ref C _class){
+auto DevicePointerMotionHint(A,B,C)(ref A d, ref B type, ref C _class){
     _class =  (cast(XDevice *) d).device_id << 8 | _devicePointerMotionHint;
 }
 
-auto DeviceButton1Motion(A,B,C)(A d, B type, ref C _class){
+auto DeviceButton1Motion(A,B,C)(ref A d, ref B type, ref C _class){
     _class =  (cast(XDevice *) d).device_id << 8 | _deviceButton1Motion;
 }
 
-auto DeviceButton2Motion(A,B,C)(A d, B type, ref C _class){
+auto DeviceButton2Motion(A,B,C)(ref A d, ref B type, ref C _class){
     _class =  (cast(XDevice *) d).device_id << 8 | _deviceButton2Motion;
 }
 
-auto DeviceButton3Motion(A,B,C)(A d, B type, ref C _class){
+auto DeviceButton3Motion(A,B,C)(ref A d, ref B type, ref C _class){
     _class =  (cast(XDevice *) d).device_id << 8 | _deviceButton3Motion;
 }
 
-auto DeviceButton4Motion(A,B,C)(A d, B type, Cref   _class){
+auto DeviceButton4Motion(A,B,C)(A d, B type, ref C _class){
     _class =  (cast(XDevice *) d).device_id << 8 | _deviceButton4Motion;
 }
 
-auto DeviceButton5Motion(A,B,C)(A d, B type, ref C _class){
+auto DeviceButton5Motion(A,B,C)(ref A d, ref B type, ref C _class){
     _class =  (cast(XDevice *) d).device_id << 8 | _deviceButton5Motion;
 }
 
-auto DeviceButtonMotion(A,B,C)(A d, B type, Cref   _class){
+auto DeviceButtonMotion(A,B,C)(A d, B type, ref C _class){
     _class =  (cast(XDevice *) d).device_id << 8 | _deviceButtonMotion;
 }
 
-auto DeviceOwnerGrabButton(A,B,C)(A d, B type, ref C _class){
+auto DeviceOwnerGrabButton(A,B,C)(ref A d, ref B type, ref C _class){
     _class =  (cast(XDevice *) d).device_id << 8 | _deviceOwnerGrabButton;
 }
 
-auto DeviceButtonPressGrab(A,B,C)(A d, B type, ref C _class){
+auto DeviceButtonPressGrab(A,B,C)(ref A d, ref B type, ref C _class){
     _class =  (cast(XDevice *) d).device_id << 8 | _deviceButtonGrab;
 }
 
-auto NoExtensionEvent(A,B,C)(A d, B type, ref C _class){
+auto NoExtensionEvent(A,B,C)(ref A d, ref B type, ref C _class){
     _class =  (cast(XDevice *) d).device_id << 8 | _noExtensionEvent;
 }
 
@@ -150,23 +150,23 @@ auto DevicePresence(A,B,C)(A dpy, B type, C _class){
 }
 
 /* Errors */
-auto BadDevice(A,B)(A dpy, B error){
+auto BadDevice(A,B)(ref A dpy, ref B error){
     return _xibaddevice(dpy, &error);
 }
 
-auto BadClass(A,B)(A dpy, B error){
+auto BadClass(A,B)(ref A dpy, ref B error){
     return _xibadclass(dpy, &error);
 }
 
-auto BadEvent(A,B)(A dpy, B error){
+auto BadEvent(A,B)(ref A dpy, ref B error){
     return _xibadevent(dpy, &error);
 }
 
-auto BadMode(A,B)(A dpy, B error){
+auto BadMode(A,B)(ref A dpy, ref B error){
     return _xibadmode(dpy, &error);
 }
 
-auto DeviceBusy(A,B)(A dpy, B error){
+auto DeviceBusy(A,B)(ref A dpy, ref B error){
     return _xidevicebusy(dpy, &error);
 }
 
