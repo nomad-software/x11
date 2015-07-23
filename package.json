@@ -35,6 +35,7 @@
 				"source/x11/Xutil.d",
 				"source/x11/extensions/*",
 				"source/x11/Xproto_undef.d",
+				"source/x11/Xatom.d",
 			],
 		},
 	],

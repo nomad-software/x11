@@ -279,11 +279,10 @@ enum {
  * But, don't actually use the CARD32 type.  We can't get it defined here
  * without polluting the namespace.
  */
-version(X86_64){
-    uint XEventClass;
-}
-else{
-    c_ulong XEventClass;
+version(_XSERVER64){
+    alias XEventClass = uint;
+}else{
+    alias XEventClass = c_ulong;
 }
 
 /*******************************************************************
