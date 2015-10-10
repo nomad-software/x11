@@ -53,7 +53,6 @@ alias _SIZEOF SIZEOF;
  */
 version( X86_64 ){
     alias long INT64;
-    alias c_ulong CARD64;
     //~ #  define B32 :32
     //~ #  define B16 :16
     alias uint INT32;
