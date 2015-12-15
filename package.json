@@ -5,18 +5,18 @@
 	"authors": ["Walter Bright"],
 	"license": "LGPL v3",
 	"excludedSourceFiles": [
-		"source/c/*",
+		"source/c/*"
 	],
 	"configurations": [
 		{
 			"name": "library",
 			"targetType": "library",
-			"libs-linux": ["X11"],
+			"libs-linux": ["X11"]
 		},
 		{
 			"name": "application",
 			"targetType": "executable",
-			"libs-linux": ["X11"],
+			"libs-linux": ["X11"]
 		},
 		{
 			"name": "tcltk-import",
@@ -35,8 +35,8 @@
 				"source/x11/Xutil.d",
 				"source/x11/extensions/*",
 				"source/x11/Xproto_undef.d",
-				"source/x11/Xatom.d",
-			],
-		},
-	],
+				"source/x11/Xatom.d"
+			]
+		}
+	]
 }
