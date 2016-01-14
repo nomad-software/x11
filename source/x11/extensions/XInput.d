@@ -31,7 +31,7 @@ enum _changeDeviceNotify = 2;
    code has to be in sync with FixExtensionEvents() in xserver/Xi/extinit.c */
 enum _propertyNotify = 6;
 
-auto FindTypeAndClass(A,B,C,D,E)(ref A d, ref B type, ref C _class, ref D classid, ref E offset){
+auto FindTypeAndClass(A,B,C,D,E)(ref A d, ref B type, ref C _class, D classid, E offset){
     int _i;
     XInputClassInfo *_ip;
     type = 0;
@@ -710,7 +710,7 @@ struct XAxisInfo {
     int 	max_value;
 }
 
-alias XValuatorInfoPtr = XAxisInfo*;
+alias XValuatorInfoPtr = XValuatorInfo*;
 
 struct XValuatorInfo {
     XID			class_;
