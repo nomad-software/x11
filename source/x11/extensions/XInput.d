@@ -733,7 +733,7 @@ struct XValuatorInfo {
 
 
 struct XInputClassInfo {
-        ubyte   input_class_;
+        ubyte   input_class;
         ubyte   event_type_base;
 }
 
