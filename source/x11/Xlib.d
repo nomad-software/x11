@@ -1,6 +1,6 @@
 module x11.Xlib;
 import core.stdc.config;
-import std.c.stdarg;
+import core.stdc.stdarg;
 import x11.X;
 
 extern (C) nothrow:

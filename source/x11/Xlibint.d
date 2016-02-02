@@ -7,7 +7,7 @@ module x11.Xlibint;
  *  Warning, there be dragons here....
  */
 import std.stdio;
-import std.c.string : memcpy;
+import core.stdc.string : memcpy;
 import core.stdc.config;
 import core.stdc.stdlib : free, malloc, calloc, realloc;
 
