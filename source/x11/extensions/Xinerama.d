@@ -28,7 +28,7 @@ in this Software without prior written authorization from The Open Group.
 import x11.Xlib;
 
 
-extern(C):
+extern(C) nothrow:
 
 
 struct XineramaScreenInfo {
