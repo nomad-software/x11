@@ -564,7 +564,7 @@ extern Bool XPointInRegion(
 );
 
 extern Region XPolygonRegion(
-    x11.Xregion.XPoint*                                 /* points                                                       */,
+    XPoint*                                 /* points                                                       */,
     int                                                 /* n                                                            */,
     int                                                 /* fill_rule                                                    */
 );

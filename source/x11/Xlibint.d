@@ -9,6 +9,7 @@ module x11.Xlibint;
 import std.stdio;
 import core.stdc.string : memcpy;
 import core.stdc.config;
+import core.stdc.stdio : fopen;
 import core.stdc.stdlib : free, malloc, calloc, realloc;
 
 import x11.X    : XID, GContext, KeySym, Font, VisualID, Window;
@@ -1269,7 +1270,7 @@ extern int _XTextHeight16(
 );
 
 alias std.stdio.File.open   _XOpenFile;
-alias std.stdio.fopen       _XFopenFile;
+alias fopen _XFopenFile;
 
                                                         /* EvToWire.c                                                   */
 extern Status _XEventToWire(Display* dpy, XEvent* re, xEvent* event);
