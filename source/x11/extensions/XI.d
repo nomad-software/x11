@@ -1,6 +1,5 @@
 module x11.extensions.XI;
 
-import std.string : string;
 import core.stdc.config;
 
 /* Definitions used by the server, library and client */
