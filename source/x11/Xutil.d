@@ -4,7 +4,7 @@ import core.stdc.config;
 import x11.Xlib;
 import x11.X;
 import x11.Xregion;
-import x11.Xresource : XrmStringToQuark;
+import x11.Xresource : XrmStringToQuark, XrmUniqueQuark;
 import x11.keysym;
 
 extern (C) nothrow:
